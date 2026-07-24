@@ -1,4 +1,4 @@
-# I HONESTLY HAVE NO IDEA WHAT I'M GOING TO DO WITH THIS YET
+# SOULFLARE
 
 This game is still very early in development, it's only *barely* not a block painter.
 
