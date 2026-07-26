@@ -111,14 +111,4 @@ function f:keyp(key) -- key press detect function ( f:keyp(key) )
 
 end
 
-
-
-
-
-
-
-
---config
-if(pixelart==true)then
-    love.graphics.setDefaultFilter("nearest", "nearest")
-end
+love.graphics.setDefaultFilter("nearest", "nearest")
