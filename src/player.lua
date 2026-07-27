@@ -4,7 +4,7 @@ y=0
 hotbar_size = 16
 selected_slot = 1
 inventory = {
-    {"Stone", 7, 10},
+    {"Stone", 7, 10000000000},
     {"Dirt", 8, 10},
     {"Grass", 9, 10},
     {"Planks", 12, 10},

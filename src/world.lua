@@ -31,8 +31,8 @@ function draw_chunk_blocks(chunk, x_offset, y_offset)
 end
 
 function world_updates()
-  block_break(test_chunk)
-  block_place(test_chunk)
+    block_break(test_chunk)
+    block_place(test_chunk)
 end
 
 world={}

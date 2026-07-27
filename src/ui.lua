@@ -15,7 +15,7 @@ function render_hotbar()
 
                 if(i==selected_slot)then
                     f:rgb(255,math.sin(sine_var)*128+128,255)
-                    f:draw(sprites[1],25+(10*i),-8+ui_position)
+                    f:draw(sprites[3],25+(10*i),-8+ui_position)
                 end
             end
             for i=9,16,1 do
@@ -25,6 +25,7 @@ function render_hotbar()
 
                 --draw a special outline around the selected block
                 if(i==selected_slot)then
+                    f:rgb(255,math.sin(sine_var)*128+128,255)
                     f:draw(sprites[3],25+(10*i)-80,1+ui_position)
                 end
             end

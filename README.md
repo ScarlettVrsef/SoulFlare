@@ -28,7 +28,7 @@ there are more things you can do with the other number keys, but they're kinda b
 
 ## To-do list
 
-* 1 - make the world bigger than 16 blocks (and also change the name after that) **DONE... ISH... TECHNICALLY THE WORLD IS BIGGER NOW**
+* 1 - make the world bigger than 16 blocks (and also change the name after that) **working on it like rn literally**
 * 2 - add the player - **CURRENTLY WORKING ON THIS**
 * 3 - add interactions between blocks
 * 4 - add particles

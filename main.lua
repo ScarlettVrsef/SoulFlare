@@ -29,15 +29,19 @@ function love.update(dt)
 end
 
 function love.draw()
+    
+    f:rgb(32,224,224)
+    f:rect2(0,0,128,128)
 
     f:rgb(255,255,255)
     draw_chunk_blocks(test_chunk,-x,-y)
 
+    -- draw the block selection cursor
     f:rgb(255,math.cos(sine_var)*128+128,255)
-    f:drawall(sprites[1],(math.floor(love.mouse.getX()/24)*8)+4,(math.floor(love.mouse.getY()/24)*8)+4,0,4,4,math.cos(sine_var)/4+1,math.cos(sine_var)/4+1)
+    f:drawall(sprites[1],((mouse_x*8)+4)-x,((mouse_y*8)+4)-y,0,4,4,math.cos(sine_var)/4+1,math.cos(sine_var)/4+1)
 
     render_hotbar()
-
+    -- draw the small spinning cursor
     f:rgb(255,math.cos(sine_var)*128+128,255)
     f:drawr(sprites[2],love.mouse.getX()/3,love.mouse.getY()/3,sine_var,4,4)
 
