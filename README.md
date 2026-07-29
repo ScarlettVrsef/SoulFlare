@@ -2,9 +2,7 @@
 
 This game is still very early in development, it's only *barely* not a block painter.
 
-![game screenshot](Readmeassets/gamescreenshot_v1.2.1.png "game screenshot")
-
-![screenshot of ui](Readmeassets/ui1.2.1.png "screenshot of ui")
+(game screenshots removed cuz they were outdated)
 
 ## Controls
 
