@@ -6,21 +6,13 @@ This game is still very early in development, it's only *barely* not a block pai
 
 ## Controls
 
-**Left click** to Place block
+**Left click** to Place blocks
 
-**Right Click** to Break Block
+**Right Click** to Break Blocks
 
 **Q** and **E** to cycle between blocks
 
-**M** to give 999 of everything
-
 hold **TAB** to hide ui
-
-**4** to toggle rendering air as a block
-
-**5** to toggle music
-
-**6**, **7**, and **8** to change background color
 
 there are more things you can do with the other number keys, but they're kinda broken right now.
 
