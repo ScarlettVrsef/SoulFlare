@@ -2,17 +2,17 @@ function block_break (chunk)
     -- only break the block if right clicking, and only if the block selected isn't air 
     if (love.mouse.isDown(2)) then
         
-        if (chunk[(mouse_x + math.floor(x / 24)) + ((mouse_y + math.floor(y / 24)) * 16) + 1] ~= 10) then
-            
+        if (chunk[(mouse_x + math.floor(x/8)) + ((mouse_y + math.floor(y/8)) * 16) + 1] ~= 10) then 
+           
             for i=1, hotbar_size, 1 do
                 
-                if (inventory[i][2] == chunk[(mouse_x - math.floor(x / 16)) + ((mouse_y - math.floor(y / 16)) * 16) + 1]) then
+                if (inventory[i][2] == chunk[(mouse_x + math.floor(x/8)) + ((mouse_y + math.floor(y/8)) * 16) + 1]) then
                     
                     inventory[i][3] = inventory[i][3] + 1
                 end
             end
 
-            chunk[(mouse_x - math.floor(x / 16)) + ((mouse_y - math.floor(y / 16)) * 16) + 1] = 10
+            chunk[mouse_x + (mouse_y * 16) + 1] = 10
         end
     end
 end
@@ -25,9 +25,9 @@ function block_place (chunk)
 
         else
 
-            if (chunk[(mouse_x + math.floor(x / 24)) + ((mouse_y + math.floor(y / 24)) * 16) + 1] == 10) then
+            if (chunk[(mouse_x + math.floor(x/8)) + ((mouse_y + math.floor(y/8)) * 16) + 1] == 10) then
 
-                chunk[(mouse_x - math.floor(x/16)) + ((mouse_y - math.floor(y/16)) * 16) + 1 + math.floor(x+((y*16))/384)] = inventory[selected_slot][2]
+                chunk[(mouse_x + math.floor(x/8)) + ((mouse_y + math.floor(y/8)) * 16) + 1] = inventory[selected_slot][2]
 
                 inventory[selected_slot][3] = inventory[selected_slot][3] - 1
             end
@@ -41,7 +41,7 @@ function cycle_items()
             selected_slot=selected_slot-1
         end
         if(key=="e")then
-            selected_slot=selected_slot+1
+            selected_slot=selected_slot+1 
         end
     end
 

@@ -11,6 +11,9 @@ function love.load()
     init_sprites("all")
 
     -- initiate
+
+    love.mouse.setVisible(false)
+
     g_s=3
     g_x=0
     g_y=0
@@ -38,7 +41,7 @@ function love.draw()
 
     -- draw the block selection cursor
     f:rgb(255,math.cos(sine_var)*128+128,255)
-    f:drawall(sprites[1],((mouse_x*8)+4)-x,((mouse_y*8)+4)-y,0,4,4,math.cos(sine_var)/4+1,math.cos(sine_var)/4+1)
+    f:drawall(sprites[1],(mouse_x + math.floor(x/8))*8, (mouse_y + math.floor(y/8))*8,0,4,4,math.cos(sine_var)/4+1,math.cos(sine_var)/4+1)
 
     render_hotbar()
     -- draw the small spinning cursor
