@@ -61,5 +61,5 @@ function render_hotbar()
         f:drawr(sprites[17],16,16,sine_var/2,5,5)
         f:drawr(sprites[inventory[selected_slot][2]],16,16,sine_var/2,4,4)
 
-f:print((mouse_x + math.floor(x/8 + x%8)) + ((mouse_y + math.floor(y/8 + y%8)) * 16) + 1,0,0)
+f:print((mouse_x + x/8) + ((mouse_y + y/8) * 16) + 1,0,0)
 end 
