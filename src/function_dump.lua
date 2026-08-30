@@ -1,6 +1,6 @@
 function grab_var()
-    mouse_x=math.floor(love.mouse.getX()/24)
-    mouse_y=math.floor(love.mouse.getY()/24)
+    mouse_x=math.floor((x/8)+(love.mouse.getX()/24))
+    mouse_y=math.floor((y/8)+(love.mouse.getY()/24))
 end
 
 function misc_updates()
