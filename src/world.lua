@@ -91,6 +91,23 @@ function world_updates()
         end
     end
 
+    if(x>64)then
+        current_chunk=current_chunk+1
+        x=-64
+    end
+    if(x<-64)then
+        current_chunk=current_chunk-1
+        x=64
+    end
+    if(y>64)then
+        current_chunk=current_chunk+8
+        y=-64
+    end
+    if(y<-64)then
+        current_chunk=current_chunk-8
+        y=64
+    end
+
     block_break(world,mouse_chunk)
     block_place(world,mouse_chunk)
 end
