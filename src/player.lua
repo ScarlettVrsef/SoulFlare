@@ -14,12 +14,12 @@ inventory = {
     {"Iron Ore", 13, 10},
     {"Copper Ore", 14, 10},
     {"Air (literally how)", 10, 10},
-    {"Error Block", 6, 10},
-    {"Menu Selector", 3, 10},
-    {"Block Frame", 4, 10},
-    {"Block Selector Cursor", 1, 10},
-    {"Hotbar", 5, 10},
-    {"Debug Player Collision Point", 19, 10}
+    {"Air (literally how)", 10, 10},
+    {"Air (literally how)", 10, 10},
+    {"Air (literally how)", 10, 10},
+    {"Air (literally how)", 10, 10},
+    {"Air (literally how)", 10, 10},
+    {"Air (literally how)", 10, 10}
 }
 
 mouse_offset_x = 0
