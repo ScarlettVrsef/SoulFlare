@@ -20,6 +20,12 @@ function love.load()
 
     sine_var = 0
 
+    flat_worldgen()
+
+    current_chunk=36
+
+    mouse_chunk = current_chunk
+
 end
 
 function love.update(dt)
@@ -37,7 +43,10 @@ function love.draw()
     f:rect2(0,0,128,128)
 
     f:rgb(255,255,255)
-    draw_chunk_blocks(test_chunk,-x,-y)
+    
+    --draw_chunk_blocks(world[36],-x,-y)
+    draw_world(x,y)
+
 
     -- draw the block selection cursor
     f:rgb(255,math.cos(sine_var)*128+128,255)
