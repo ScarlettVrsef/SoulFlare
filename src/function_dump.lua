@@ -4,6 +4,9 @@ function grab_var()
 
     mx=love.mouse.getX()/3
     my=love.mouse.getY()/3
+
+    mcx=math.floor(x+math.floor(love.mouse.getX()/3))
+    mcy=math.floor(y+math.floor(love.mouse.getY()/3))
 end
 
 function misc_updates()

@@ -31,8 +31,8 @@ end
 function love.update(dt)
     grab_var()
     sine_var = sine_var + 0.05
-    world_updates()
     player_updates()
+    world_updates()
     misc_updates()
 
 end
