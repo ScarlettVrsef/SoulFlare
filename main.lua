@@ -9,12 +9,13 @@ function love.load()
     require 'src.controls'
     require 'src.function_dump'
     init_sprites("all")
+    init_sounds("all")
 
     -- initiate
 
     love.mouse.setVisible(false)
 
-    g_s=3
+    g_s=4
     g_x=0
     g_y=0
 
@@ -40,7 +41,7 @@ end
 function love.draw()
     
     f:rgb(32,224,224)
-    f:rect2(0,0,128,128)
+    f:rect2(0,0,268,201)
 
     f:rgb(255,255,255)
     
@@ -51,10 +52,13 @@ function love.draw()
     -- draw the block selection cursor
     f:rgb(255,math.cos(sine_var)*128+128,255)
     f:drawall(sprites[1],((mouse_x*8)+4)-x, ((mouse_y*8)+4)-y,0,4,4,math.cos(sine_var)/4+1,math.cos(sine_var)/4+1)
+    
+    if (!f:key("tab")) then
+        render_ui()
+    end
 
-    render_hotbar()
     -- draw the small spinning cursor
     f:rgb(255,math.cos(sine_var)*128+128,255)
-    f:drawr(sprites[2],love.mouse.getX()/3,love.mouse.getY()/3,sine_var,4,4)
+    f:drawr(sprites[2],love.mouse.getX()/4,love.mouse.getY()/4,sine_var,4,4)
 
 end

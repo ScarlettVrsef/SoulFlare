@@ -1,10 +1,12 @@
 ui_position=-16
 
-function render_hotbar()
+function render_ui()
 
         --draw ui background
             f:rgb(255,255,255)
             f:draw(sprites[5],0,-16+ui_position)
+            f:draw(sprites[21],130,-29+(ui_position*1.8125))
+            f:print("Hi :]",140,-25+(ui_position*1.8125))
             f:draw(sprites[4],0,0)
 
 
@@ -62,4 +64,5 @@ function render_hotbar()
         f:drawr(sprites[inventory[selected_slot][2]],16,16,sine_var/2,4,4)
 
 --f:print(mouse_x.."\n"..mouse_y.."\n"..mouse_chunk,0,0)
+    f:print(current_chunk,0,0)
 end 

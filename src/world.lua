@@ -29,9 +29,9 @@ function draw_chunk_blocks(chunk, x_offset, y_offset)
           i = i + 1
         end
     end
-    f:rgb(255,math.cos(sine_var)*128+128,255)
+    --[[f:rgb(255,math.cos(sine_var)*128+128,255)
     f:rect1(0+x_offset,0+y_offset,128,128)
-    f:rgb(255,255,255)
+    f:rgb(255,255,255)]]
     i = 1
 end
 

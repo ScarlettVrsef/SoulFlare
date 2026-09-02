@@ -14,6 +14,8 @@ function block_break (table, chunk)
             end
 
             table[chunk][(mouse_x+mouse_offset_x) + ((mouse_y+mouse_offset_y) * 16) + 1] = 10
+            f:stops()
+            f:plays(sounds[1])
         end
     end
 end
@@ -56,16 +58,27 @@ end
 
 
 function movement()
-    if(f:key("w"))then
-        y=y-1
+    if(current_chunk<18 and y<=-60)then else
+        if(f:key("w"))then
+            y=y-1
+        end
     end
-    if(f:key("s"))then
-        y=y+1
+
+    if(current_chunk<11 and x<=-60)then else
+        if(f:key("a"))then
+            x=x-1
+        end
     end
-    if(f:key("a"))then
-        x=x-1
+
+    if(current_chunk>47 and y>=60)then else
+        if(f:key("s"))then
+            y=y+1
+        end
     end
-    if(f:key("d"))then
-        x=x+1
+
+    if(current_chunk>54 and x>=60)then else
+        if(f:key("d"))then
+            x=x+1
+        end
     end
 end
