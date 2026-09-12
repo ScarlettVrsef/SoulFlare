@@ -74,27 +74,32 @@ end
 
 
 function movement()
+    if(f:key("lshift"))then
+        spd=2
+    else
+        spd=1
+    end
     if(current_chunk<18 and y<=-60)then else
         if(f:key("w"))then
-            y=y-1
+            y=y-spd
         end
     end
 
     if(current_chunk<11 and x<=-60)then else
         if(f:key("a"))then
-            x=x-1
+            x=x-spd
         end
     end
 
     if(current_chunk>47 and y>=60)then else
         if(f:key("s"))then
-            y=y+1
+            y=y+spd
         end
     end
 
     if(current_chunk>54 and x>=60)then else
         if(f:key("d"))then
-            x=x+1
+            x=x+spd
         end
     end
 end

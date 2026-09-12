@@ -1,5 +1,6 @@
 x=0
 y=0
+spd=1
 
 hotbar_size = 16
 selected_slot = 1

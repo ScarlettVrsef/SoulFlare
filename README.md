@@ -14,6 +14,10 @@ This game is still very early in development, it's only *barely* not a block pai
 
 hold **TAB** to hide ui
 
+hold **WASD** to move
+
+hold **LEFT SHIFT** to run
+
 there are more things you can do with the other number keys, but they're kinda broken right now.
 
 ## To-do list
