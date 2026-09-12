@@ -6,7 +6,7 @@ function render_ui()
             f:rgb(255,255,255)
             f:draw(sprites[5],0,-16+ui_position)
             f:draw(sprites[21],130,-29+(ui_position*1.8125))
-            f:print("Hi :]",140,-25+(ui_position*1.8125))
+            f:print("Hi :]   \n"..sine_var,140,-25+(ui_position*1.8125))
             f:draw(sprites[4],0,0)
 
 

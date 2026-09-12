@@ -8,6 +8,7 @@ function love.load()
     require 'src.player'
     require 'src.controls'
     require 'src.function_dump'
+    require 'src.blocks'
     init_sprites("all")
     init_sounds("all")
 
@@ -36,6 +37,9 @@ function love.update(dt)
     world_updates()
     misc_updates()
 
+    if(f:key("-"))then
+        g_s=g_s-0.05
+    end
 end
 
 function love.draw()

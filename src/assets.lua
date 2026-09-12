@@ -7,7 +7,7 @@
 
 -- !! sprites
     -- number of sprites
-    sprnum = 21
+    sprnum = 23
     -- table of all sprite data
     sprites = {}
     -- table of all sprite names
@@ -32,7 +32,9 @@
     "None",
     "Debug Player Collision Point",
     "Background",
-    "UI 2"
+    "UI 2",
+    "Log",
+    "Leaves"
 }
     -- table of all sprite paths relative to the "spr" folder, without extensions.
     sprpaths = {
@@ -56,7 +58,9 @@
         "/block/none",
         "/other/debug_player_collision_point",
         "/other/bg",
-        "/ui/ui2"
+        "/ui/ui2",
+        "/block/log",
+        "/block/leaves"
                    }
         -- function to initiate all sprites
         function init_sprites(specify) -- "specify" is used to specify whether to initiate everything, or just one sprite. e.g. init_sprites(11) would only load the brick texture.
@@ -78,16 +82,18 @@
 
         -- !! sound
     -- number of sounds
-    sfxnum = 1
+    sfxnum = 2
     -- table of all sound data
     sounds = {}
     -- table of all sound names
     sfxnames = {
-    "Break"
+    "Broke block",
+    "Placed block"
 }
     -- table of all sound paths relative to the "spr" folder, without extensions.
     sfxpaths = {
-        "/break.wav"
+        "/break.wav",
+        "/place.wav"
                    }
         -- function to initiate all sound
         function init_sounds(specify) -- "specify" is used to specify whether to initiate everything, or just one sound. e.g. init_sound(11) would only load the brick texture.
