@@ -7,7 +7,7 @@
 
 -- !! sprites
     -- number of sprites
-    sprnum = 23
+    sprnum = 24
     -- table of all sprite data
     sprites = {}
     -- table of all sprite names
@@ -34,7 +34,8 @@
     "Background",
     "UI 2",
     "Log",
-    "Leaves"
+    "Leaves",
+    "Water"
 }
     -- table of all sprite paths relative to the "spr" folder, without extensions.
     sprpaths = {
@@ -60,7 +61,8 @@
         "/other/bg",
         "/ui/ui2",
         "/block/log",
-        "/block/leaves"
+        "/block/leaves",
+        "/block/wotr"
                    }
         -- function to initiate all sprites
         function init_sprites(specify) -- "specify" is used to specify whether to initiate everything, or just one sprite. e.g. init_sprites(11) would only load the brick texture.

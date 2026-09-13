@@ -64,5 +64,5 @@ function render_ui()
         f:drawr(sprites[inventory[selected_slot][2]],16,16,sine_var/2,4,4)
 
 --f:print(mouse_x.."\n"..mouse_y.."\n"..mouse_chunk,0,0)
-    f:print(current_chunk,0,0)
+    --f:print(current_chunk,0,0)
 end 
