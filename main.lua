@@ -57,7 +57,7 @@ function love.draw()
     f:rgb(255,math.cos(sine_var)*128+128,255)
     f:drawall(sprites[1],((mouse_x*8)+4)-x, ((mouse_y*8)+4)-y,0,4,4,math.cos(sine_var)/4+1,math.cos(sine_var)/4+1)
     
-    if (!f:key("tab")) then
+    if (f:key("tab")==false) then
         render_ui()
     end
 
