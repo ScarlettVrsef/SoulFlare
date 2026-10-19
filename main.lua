@@ -6,6 +6,7 @@ function love.load()
     require 'src.world'
     require 'src.ui'
     require 'src.player'
+    require 'src.collision'
     require 'src.controls'
     require 'src.function_dump'
     require 'src.blocks'
@@ -64,5 +65,11 @@ function love.draw()
     -- draw the small spinning cursor
     f:rgb(255,math.cos(sine_var)*128+128,255)
     f:drawr(sprites[2],love.mouse.getX()/4,love.mouse.getY()/4,sine_var,4,4)
+
+    f:rect2(64-4,64-8,8,16)
+    f:draw(sprites[19],(64-3.5)+4,(64-3.5)+8)
+    f:draw(sprites[19],(64-3.5)+4,(64-3.5)-8)
+    f:draw(sprites[19],(64-3.5)-4,(64-3.5)+8)
+    f:draw(sprites[19],(64-3.5)-4,(64-3.5)-8)
 
 end
