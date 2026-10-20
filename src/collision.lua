@@ -1,157 +1,58 @@
-function checkcoll(a,b,c,d)
-    if a then
-        if(world[current_chunk][math.floor((x+64+4)/8)+(math.floor((y+64+8)/8)*16)+1] ~= 10)then
-            coll.br = true
-        else
-            coll.br = false
-        end
+function collcheck (offset_x,offset_y)
+
+    local current_chunk2 = current_chunk
+
+    local offset_x2 = 0
+    local offset_y2 = 0
+
+    if(x==64)then
+        current_chunk2 = current_chunk2 + 1
+        offset_x2=offset_x2-128
+    elseif(x==-64)then
+        current_chunk2 = current_chunk2 - 1
+        offset_x2=offset_x2+128
     end
-    if b then
-        if(world[current_chunk][math.floor((x+64+4)/8)+(math.floor((y+64-8)/8)*16)+1] ~= 10)then
-            coll.tr = true
-        else
-            coll.tr = false
-        end
+
+    if(y==64)then
+        current_chunk2 = current_chunk2 + 8
+        offset_y2=offset_y2-128
+    elseif(y==-64)then
+        current_chunk2 = current_chunk2 - 8
+        offset_y2=offset_y2+128
     end
-    if c then
-        if(world[current_chunk][math.floor((x+64-4)/8)+(math.floor((y+64+8)/8)*16)+1] ~= 10)then
-            coll.bl = true
-        else
-            coll.bl = false
-        end
+
+    if(world[current_chunk2][math.floor((x+64+offset_x+offset_x2)/8)+(math.floor((y+64+offset_y+offset_y2)/8)*16)+1] ~= 10)then
+        return false
+    else
+        return true
     end
-     if d then
-        if(world[current_chunk][math.floor((x+64-4)/8)+(math.floor((y+64-8)/8)*16)+1] ~= 10)then
-            coll.tl = true
-        else
-            coll.tl = false
-        end
-    end
+
 end
 
-function collision()
-
-    --[[if(world[current_chunk][math.floor((x+64)/8)+(math.floor((y+64)/8)*16)+1] ~= 10)then
-        if(math.floor((x+64)/8)+(math.floor((y+64)/8)*16)+1>=1) or (math.floor((x+64)/8)+(math.floor((y+64)/8)*16)+1<=127)then
-            if(buttonspresseddir.w)then
-                y=y+spd
-            end
-            if(buttonspresseddir.a)then
-                x=x+spd
-            end
-            if(buttonspresseddir.s)then
-                y=y-spd
-            end
-            if(buttonspresseddir.d)then
-                x=x-spd
-            end
-        end
-    end]]
-    checkcoll(true,true,true,true)
-
-    --[[while coll.br and coll.bl do
-        y=y-1
-        checkcoll(true,true,true,true)
-    end
-    while coll.br and coll.tr do
-        x=x-1
-        checkcoll(true,true,true,true)
-    end
-    while coll.tl and coll.tr do
-        y=y+1
-        checkcoll(true,true,true,true)
-    end
-    while coll.tl and coll.bl do
-        x=x+1
-        checkcoll(true,true,true,true)
-    end
-
-    while coll.br do
-        y=y-1
-        x=x-1
-        checkcoll(true,true,true,true)
-    end
-    while coll.bl do
-        y=y-1
-        x=x+1
-        checkcoll(true,true,true,true)
-    end
-    while coll.tr do
-        x=x-1
-        checkcoll(true,true,true,true)
-    end
-    while coll.tl do
-        x=x+1
-        checkcoll(true,true,true,true)
-    end
-
-    if coll.tl or coll.bl or coll.br or coll.tr then
-        current_chunk=36
-        x=0
-        y=-8
-        checkcoll(true,true,true,true)
-    end]]
-
-    if coll.br and coll.bl then
-        y=y-1
-        checkcoll(true,true,true,true)
-    end
-    if coll.br and coll.tr then
-        x=x-1
-        checkcoll(true,true,true,true)
-    end
-    if coll.tl and coll.tr then
-        y=y+1
-        checkcoll(true,true,true,true)
-    end
-    if coll.tl and coll.bl then
-        x=x+1
-        checkcoll(true,true,true,true)
-    end
-
-    --[[if coll.br then
-        y=y-1
-        x=x-1
-        checkcoll(true,true,true,true)
-    end
-    if coll.bl then
-        y=y-1
-        x=x+1
-        checkcoll(true,true,true,true)
-    end
-    if coll.tr then
-        x=x-1
-        checkcoll(true,true,true,true)
-    end
-    if coll.tl then
-        x=x+1
-        checkcoll(true,true,true,true)
-    end]]
-
-    if coll.br then
-        y=y-1
-        checkcoll(true,true,true,true)
-    end
-    if coll.bl then
-        y=y-1
-        checkcoll(true,true,true,true)
-    end
-    if coll.tr then
-        y=y+1
-        checkcoll(true,true,true,true)
-    end
-    if coll.tl then
-        y=y+1
-        checkcoll(true,true,true,true)
-    end
-
-    if coll.tl or coll.bl or coll.br or coll.tr then
-        current_chunk=36
-        x=0
-        y=-8
-        checkcoll(true,true,true,true)
-    end
+--[[function collision ()
 
     
 
-end
+end]
+
+--[[function CollideAxis(axis, x, y, width, height)
+    pos={x=x,y=y}
+    min1={x=x+width,y=y+height}
+    --max1={x=x,y=y}
+
+    for i=1, 128, 1 do
+        if(world[current_chunk][i] ~= 10)then
+
+            min2 = {math.floor(x/8) + ((current_chunk%16)*16), math.floor(y/8) + (((current_chunk/16)-current_chunk%16) * 16)}
+            max2 = {x=min2.x + 1, y=min2.y + 1}
+                
+            if(min1.x<max2.x and pos.x>min2.x and min1.y<max2.y and pos.y>max2.y)then 
+                local collision = min1[axis]-min2[axis]
+                if(collision<0)then
+                    pos
+                end
+            end
+        end
+    end
+
+end]]

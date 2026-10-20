@@ -34,8 +34,8 @@ end
 function love.update(dt)
     grab_var()
     sine_var = sine_var + 0.05
-    player_updates()
     world_updates()
+    player_updates()
     misc_updates()
 
     if(f:key("-"))then
@@ -66,10 +66,7 @@ function love.draw()
     f:rgb(255,math.cos(sine_var)*128+128,255)
     f:drawr(sprites[2],love.mouse.getX()/4,love.mouse.getY()/4,sine_var,4,4)
 
-    f:rect2(64-4,64-8,8,16)
-    f:draw(sprites[19],(64-3.5)+4,(64-3.5)+8)
-    f:draw(sprites[19],(64-3.5)+4,(64-3.5)-8)
-    f:draw(sprites[19],(64-3.5)-4,(64-3.5)+8)
-    f:draw(sprites[19],(64-3.5)-4,(64-3.5)-8)
+    f:rect2(60,60,8,8)
+    f:draw(sprites[19],(64-3.5),(64-3.5))
 
 end

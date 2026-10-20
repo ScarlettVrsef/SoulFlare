@@ -76,32 +76,11 @@ function render_ui()
     --f:print(current_chunk,0,0)
     --f:print(inventory[selected_slot])
     
-    if(world[current_chunk][math.floor((x+64+4)/8)+(math.floor((y+64+8)/8)*16)+1] ~= 10)then
-        f:rgb(255,0,0)
-        f:print("touching",0,0)
-    else
-        f:rgb(255,255,255)
-        f:print("free",0,0)
-    end
-    if(world[current_chunk][math.floor((x+64+4)/8)+(math.floor((y+64-8)/8)*16)+1] ~= 10)then
-        f:rgb(255,0,0)
-        f:print("touching",0,20)
-    else
-        f:rgb(255,255,255)
-        f:print("free",0,20)
-    end
-    if(world[current_chunk][math.floor((x+64-4)/8)+(math.floor((y+64+8)/8)*16)+1] ~= 10)then
+    if(world[current_chunk][math.floor((x+64)/8)+(math.floor((y+64)/8)*16)+1] ~= 10)then
         f:rgb(255,0,0)
         f:print("touching",0,40)
     else
         f:rgb(255,255,255)
         f:print("free",0,40)
-    end
-    if(world[current_chunk][math.floor((x+64-4)/8)+(math.floor((y+64-8)/8)*16)+1] ~= 10)then
-        f:rgb(255,0,0)
-        f:print("touching",0,60)
-    else
-        f:rgb(255,255,255)
-        f:print("free",0,60)
     end
 end 

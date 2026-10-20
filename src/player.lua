@@ -1,9 +1,9 @@
 x=0
 y=-8
-px=0
-py=-8
+player_width = 8
+player_height = 12
 spd=1
-coll={br=false,tr=false,bl=false,tl=false}
+coll = false
 
 hotbar_size = 16
 selected_slot = 1
@@ -30,12 +30,8 @@ mouse_offset_x = 0
 mouse_offset_y = 0
 
 function player_updates()
-    px=x
-    py=y
-    coll={br=false,tr=false,bl=false,tl=false}
     cycle_items()
     movement()
     break_apart()
-    collision()
 end
 

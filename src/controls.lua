@@ -113,15 +113,8 @@ function movement()
     
     buttonspresseddir={w=false,a=false,s=false,d=false}
 
-    y=y+1
+    
     --buttonspresseddir.s=true
-
-    --[[if(current_chunk<18 and y<=-60)then else
-        if(f:key("w"))then
-            y=y-spd
-            buttonspresseddir.w=true
-        end
-    end]]
 
     --[[function love.keypressed(key)
 
@@ -134,26 +127,59 @@ function movement()
     if(f:key("space"))then
         y=y-2
     end
-    
-    if(current_chunk<11 and x<=-60)then else
-        if(f:key("a"))then
-            x=x-spd
-            buttonspresseddir.a=true
+
+    if(f:key("lctrl"))then
+        y=y+2
+    end
+
+    if(collcheck(0,-2))then
+        if(current_chunk<18 and y<=-60)then else
+            if(f:key("w"))then
+                y=y-spd
+                buttonspresseddir.w=true
+            end
         end
     end
-    
-    --[[if(current_chunk>47 and y>=60)then else
-        if(f:key("s"))then
-            y=y+spd
-            buttonspresseddir.s=true
+
+    if(collcheck(-2,0))then
+        if(current_chunk<11 and x<=-60)then else
+            if(f:key("a"))then
+                x=x-spd
+                buttonspresseddir.a=true
+            end
         end
-    end]]
-    
-    if(current_chunk>54 and x>=60)then else
-        if(f:key("d"))then
-            x=x+spd
-            buttonspresseddir.d=true
+    end
+
+    if(collcheck(0,2))then
+        if(current_chunk>47 and y>=60)then else
+            if(f:key("s"))then
+                y=y+spd
+                buttonspresseddir.s=true
+            end
         end
+        --y=y+1
+    end
+
+    if(collcheck(2,0))then
+        if(current_chunk>54 and x>=60)then else
+            if(f:key("d"))then
+                x=x+spd
+                buttonspresseddir.d=true
+            end
+        end
+    end
+
+    if(collcheck(0,-1))then
+        y=y-1
+    end
+    if(collcheck(-1,0))then
+        x=x-1
+    end
+    if(collcheck(0,1))then
+        y=y+1
+    end
+    if(collcheck(1,0))then
+        x=x+1
     end
 
 end
