@@ -20,3 +20,13 @@ function misc_updates()
         end
     end
 end
+
+function getsolidity(blockid)
+
+    if(blockid==10 or blockid==24 or blockid==23 or blockid==22)then
+        return false
+    else
+        return true
+    end
+
+end

@@ -21,7 +21,7 @@ function collcheck (offset_x,offset_y)
         offset_y2=offset_y2+127
     end
 
-    if(world[current_chunk2][math.floor((x+64+offset_x+offset_x2)/8)+(math.floor((y+64+offset_y+offset_y2)/8)*16)+1] ~= 10)then
+    if(getsolidity(world[current_chunk2][math.floor((x+64+offset_x+offset_x2)/8)+(math.floor((y+64+offset_y+offset_y2)/8)*16)+1]))then
         return false
     else
         return true
