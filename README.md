@@ -18,8 +18,6 @@ hold **WASD** to move
 
 hold **LEFT SHIFT** to run
 
-there are more things you can do with the other number keys, but they're kinda broken right now.
-
 ## To-do list
 
 * 1 - ~~make the world bigger than 16 blocks (and also change the name after that)~~ **DONE!!!!**
