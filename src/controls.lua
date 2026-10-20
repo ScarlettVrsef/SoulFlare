@@ -99,6 +99,12 @@ function cycle_items()
                 selected_slot = 1
             end
         end
+
+        if(key == "space")then
+            if(collcheck(0,3)==false)then
+                jump=3
+            end
+        end
     end
 end
 
@@ -124,21 +130,33 @@ function movement()
 
     end]]
 
-    if(f:key("space"))then
-        y=y-2
-    end
+    
 
-    if(f:key("lctrl"))then
+    --[[if(f:key("lctrl"))then
         y=y+2
-    end
+    end]]
 
     if(collcheck(0,-2))then
-        if(current_chunk<18 and y<=-60)then else
+        --[[if(current_chunk<18 and y<=-60)then else
             if(f:key("w"))then
                 y=y-spd
                 buttonspresseddir.w=true
             end
+        end]]
+
+        if(jump>0)then
+            if(collcheck(0,-jump-2))then
+                y=y-math.ceil(jump)
+                jump=jump-0.125
+            else
+                jump=0
+                while(collcheck(0,-2))do
+                    y=y-1
+                end
+            end
         end
+
+
     end
 
     if(collcheck(-2,0))then
@@ -151,13 +169,24 @@ function movement()
     end
 
     if(collcheck(0,2))then
-        if(current_chunk>47 and y>=60)then else
+        --[[if(current_chunk>47 and y>=60)then else
             if(f:key("s"))then
                 y=y+spd
                 buttonspresseddir.s=true
             end
+        end]]
+        if(fall<2 and jump<1)then
+            fall=fall+0.25
         end
-        --y=y+1
+        if(collcheck(0,fall+2))then
+            y=y+math.floor(fall)
+        else
+            while(collcheck(0,2))do
+                y=y+1
+            end
+        end
+    else
+        fall=0
     end
 
     if(collcheck(2,0))then

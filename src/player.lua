@@ -1,5 +1,7 @@
 x=0
 y=-8
+jump = 0
+fall = 0
 player_width = 8
 player_height = 12
 spd=1

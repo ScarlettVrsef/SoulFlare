@@ -5,20 +5,20 @@ function collcheck (offset_x,offset_y)
     local offset_x2 = 0
     local offset_y2 = 0
 
-    if(x==64)then
+    if(x+offset_x>63)then
         current_chunk2 = current_chunk2 + 1
-        offset_x2=offset_x2-128
-    elseif(x==-64)then
+        offset_x2=offset_x2-127
+    elseif(x+offset_x<-63)then
         current_chunk2 = current_chunk2 - 1
-        offset_x2=offset_x2+128
+        offset_x2=offset_x2+127
     end
 
-    if(y==64)then
+    if(y+offset_y>63)then
         current_chunk2 = current_chunk2 + 8
-        offset_y2=offset_y2-128
-    elseif(y==-64)then
+        offset_y2=offset_y2-127
+    elseif(y+offset_y<-63)then
         current_chunk2 = current_chunk2 - 8
-        offset_y2=offset_y2+128
+        offset_y2=offset_y2+127
     end
 
     if(world[current_chunk2][math.floor((x+64+offset_x+offset_x2)/8)+(math.floor((y+64+offset_y+offset_y2)/8)*16)+1] ~= 10)then
