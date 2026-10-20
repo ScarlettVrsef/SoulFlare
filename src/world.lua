@@ -93,7 +93,7 @@ function world_updates()
     end
 
     if(x>64)then
-        if(current_chunk%8~=7)then
+        if(current_chunk%8~=6)then
             current_chunk=current_chunk+1
             x=-63
         else
@@ -101,7 +101,7 @@ function world_updates()
         end
     end
     if(x<-64)then
-        if(current_chunk%8~=0)then
+        if(current_chunk%8~=1)then
             current_chunk=current_chunk-1
             x=63
         else
@@ -135,7 +135,7 @@ function flat_worldgen()
 
     for i=1,64,1 do
 
-        if ( i <= 32 ) then
+        if ( i <= 31 ) then
             world[i]={
                10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
                10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
@@ -153,7 +153,7 @@ function flat_worldgen()
                10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
                10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
                10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 }
-        elseif ( i > 32 and i < 40 ) then
+        elseif ( i > 31 and i < 40 ) then
             if(math.random()<0.5)then
                 world[i]={
                    10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
