@@ -1,6 +1,11 @@
 x=0
-y=0
+y=-8
+jump = 0
+fall = 0
+player_width = 8
+player_height = 12
 spd=1
+coll = false
 
 hotbar_size = 16
 selected_slot = 1
@@ -15,12 +20,12 @@ inventory = {
     {"Iron Ore", 13, 999},
     {"Copper Ore", 14, 999},
     {"Water", 24, 999},
-    {"Air (literally how)", 10, 10},
-    {"Air (literally how)", 10, 10},
-    {"Air (literally how)", 10, 10},
-    {"Air (literally how)", 10, 10},
-    {"Air (literally how)", 10, 10},
-    {"Air (literally how)", 10, 10}
+    {"Air", 10, 0},
+    {"Air", 10, 0},
+    {"Air", 10, 0},
+    {"Air", 10, 0},
+    {"Air", 10, 0},
+    {"Air", 10, 0}
 }
 
 mouse_offset_x = 0
@@ -29,5 +34,6 @@ mouse_offset_y = 0
 function player_updates()
     cycle_items()
     movement()
+    break_apart()
 end
 

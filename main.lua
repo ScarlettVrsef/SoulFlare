@@ -6,6 +6,7 @@ function love.load()
     require 'src.world'
     require 'src.ui'
     require 'src.player'
+    require 'src.collision'
     require 'src.controls'
     require 'src.function_dump'
     require 'src.blocks'
@@ -33,8 +34,8 @@ end
 function love.update(dt)
     grab_var()
     sine_var = sine_var + 0.05
-    player_updates()
     world_updates()
+    player_updates()
     misc_updates()
 
     if(f:key("-"))then

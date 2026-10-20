@@ -1,3 +1,3 @@
-love.window.setMode(768,600)
-love.window.setTitle("SOULFLARE Version 0.2 - The world")
+love.window.setMode(512,512)
+love.window.setTitle("SOULFLARE Version 0.3 - COLLISION!")
 love.window.setIcon(love.image.newImageData("sprites/logo.png"))

@@ -43,6 +43,7 @@ function draw_world(xpos,ypos)
     draw_chunk_blocks(world[current_chunk-1],-128-xpos,    -ypos)
 
     draw_chunk_blocks(world[current_chunk  ],    -xpos,    -ypos)
+    --f:rect1(-xpos,-ypos,128,128)
 
     draw_chunk_blocks(world[current_chunk+1], 128-xpos,    -ypos)
 
@@ -92,20 +93,36 @@ function world_updates()
     end
 
     if(x>64)then
-        current_chunk=current_chunk+1
-        x=-63
+        if(current_chunk%8~=7)then
+            current_chunk=current_chunk+1
+            x=-63
+        else
+            x=64
+        end
     end
     if(x<-64)then
-        current_chunk=current_chunk-1
-        x=63
+        if(current_chunk%8~=0)then
+            current_chunk=current_chunk-1
+            x=63
+        else
+            x=-64
+        end
     end
     if(y>64)then
-        current_chunk=current_chunk+8
-        y=-63
+        if(current_chunk<48)then
+            current_chunk=current_chunk+8
+            y=-63
+        else
+            y=64
+        end
     end
     if(y<-64)then
-        current_chunk=current_chunk-8
-        y=63
+        if(current_chunk>16)then
+            current_chunk=current_chunk-8
+            y=63
+        else
+            y=-64
+        end
     end
 
     block_break(world,mouse_chunk)
@@ -251,6 +268,24 @@ function flat_worldgen()
         end
 
     end
+
+    world[36]={
+                   10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+                   10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+                   10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+                   10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+                   10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+                   10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+                   10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+                   10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+                   9,9,9,9,7,7,7,7,7,7,7,7,9,9,9,9,
+                   8,8,8,8,8,7,7,13,14,7,7,8,8,8,8,8,
+                   8,8,8,8,8,8,8,7,7,8,8,8,8,8,8,8,
+                   8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
+                   8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
+                   8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
+                   8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
+                   8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8 }
 
 end
 
