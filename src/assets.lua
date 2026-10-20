@@ -7,7 +7,7 @@
 
 -- !! sprites
     -- number of sprites
-    sprnum = 24
+    sprnum = 25
     -- table of all sprite data
     sprites = {}
     -- table of all sprite names
@@ -62,7 +62,8 @@
         "/ui/ui2",
         "/block/log",
         "/block/leaves",
-        "/block/wotr"
+        "/block/wotr",
+        "/block/copper"
                    }
         -- function to initiate all sprites
         function init_sprites(specify) -- "specify" is used to specify whether to initiate everything, or just one sprite. e.g. init_sprites(11) would only load the brick texture.

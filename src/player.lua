@@ -20,7 +20,7 @@ inventory = {
     {"Iron Ore", 13, 999},
     {"Copper Ore", 14, 999},
     {"Water", 24, 999},
-    {"Air", 10, 0},
+    {"Copper", 25, 999},
     {"Air", 10, 0},
     {"Air", 10, 0},
     {"Air", 10, 0},
