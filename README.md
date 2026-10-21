@@ -2,10 +2,10 @@
 
 This game is still very early in development, it's only *barely* not a block painter.
 
-![Game Screenshot 1](Readmeassets/screenshot 1.png)
-![Game Screenshot 2](Readmeassets/screenshot 2.png)
-![Game Screenshot 3](Readmeassets/screenshot 3.png)
-![Game Screenshot 4](Readmeassets/screenshot 4.png)
+[Game Screenshot 1](Readmeassets/screenshot 1.png)
+[Game Screenshot 2](Readmeassets/screenshot 2.png)
+[Game Screenshot 3](Readmeassets/screenshot 3.png)
+[Game Screenshot 4](Readmeassets/screenshot 4.png)
 
 ## Controls
 
