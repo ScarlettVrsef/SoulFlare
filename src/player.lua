@@ -6,6 +6,9 @@ player_width = 8
 player_height = 12
 spd=1
 coll = false
+hp=100
+fullhealth=1
+freakout=0
 
 hotbar_size = 16
 selected_slot = 1
@@ -35,5 +38,18 @@ function player_updates()
     cycle_items()
     movement()
     break_apart()
+    freakout=freakout*0.9
+    if(hp>92)then
+        fullhealth=1
+    else
+        fullhealth=0
+    end
+    if(hp<1)then
+        current_chunk=36
+        x=0
+        y=-8
+        hp=100
+        fullhealth=1
+    end
 end
 

@@ -64,6 +64,10 @@ function f:lsfx(path) -- load sound function ( f:lsfx(path) )
     return love.audio.newSource(path,"static")
 end
 
+function f:lmus(path) -- load sound function ( f:lsfx(path) )
+    return love.audio.newSource(path,"stream")
+end
+
 function f:font(path,sz) -- load font function ( f:font(path) )
     love.graphics.setFont(love.graphics.newFont(path,sz))
 end
@@ -73,8 +77,8 @@ end
 function f:plays(data) -- load sound function ( f:lsfx(path) )
     return love.audio.play(data)
 end
-function f:stops() -- load sound function ( f:lsfx(path) )
-    return love.audio.stop()
+function f:stops(source) -- load sound function ( f:lsfx(path) )
+    return love.audio.stop(source)
 end
 
 --input

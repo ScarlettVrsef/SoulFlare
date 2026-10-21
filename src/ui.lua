@@ -72,6 +72,14 @@ function render_ui()
             f:drawr(sprites[inventory[selected_slot][2]],16,16,sine_var/2,4,4)
         end
 
+        f:rgb(255*((hp/200)+0.5),255*((hp/200)+0.5),255*((hp/200)+0.5))
+        f:draw(sprites[26],70+(math.sin(freakout-0.5))-1,2+(math.cos(freakout-0.5))-1)
+        f:rgb(255*((hp/200)+0.75),0,0)
+        f:rect2(71+(math.sin(freakout-0.5))-1,3+(math.cos(freakout-0.5))-1,(hp/2),5)
+        f:rgb(255*((hp/200)+0.5),255*((hp/200)+0.5),255*((hp/200)+0.5))
+        f:drawall(sprites[27+fullhealth],121,5,(math.sin(sine_var/2)+(freakout*8))/16,4.5,4.5,0.75+((math.sin(sine_var)+freakout+4)/8),0.75+((math.sin(sine_var)+freakout+4)/8))
+        f:rgb(255,255,255)
+
 --f:print(mouse_x.."\n"..mouse_y.."\n"..mouse_chunk,0,0)
     --f:print(current_chunk,0,0)
     --f:print(inventory[selected_slot])

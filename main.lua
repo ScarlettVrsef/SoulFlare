@@ -12,6 +12,7 @@ function love.load()
     require 'src.blocks'
     init_sprites("all")
     init_sounds("all")
+    init_music("all")
 
     -- initiate
 
@@ -28,6 +29,10 @@ function love.load()
     current_chunk=36
 
     mouse_chunk = current_chunk
+
+    love.audio.setVolume(0.25)
+
+    f:plays(music[1])
 
 end
 

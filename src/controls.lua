@@ -23,9 +23,16 @@ function block_break (table, chunk)
                 
             end
 
+            if(table[chunk][(mouse_x+mouse_offset_x) + ((mouse_y+mouse_offset_y) * 16) + 1]==8 or table[chunk][(mouse_x+mouse_offset_x) + ((mouse_y+mouse_offset_y) * 16) + 1] ==9)then
+                f:stops(sounds[3])
+                f:plays(sounds[3])
+            else
+                f:stops(sounds[1])
+                f:plays(sounds[1])
+            end
+            
             table[chunk][(mouse_x+mouse_offset_x) + ((mouse_y+mouse_offset_y) * 16) + 1] = 10
-            f:stops()
-            f:plays(sounds[1])
+            
         end
     end
 end
@@ -50,8 +57,13 @@ function block_place (table, chunk)
                     selected_slot = selected_slot - 1
                 end
 
-                f:stops()
-                f:plays(sounds[2])
+                if(table[chunk][(mouse_x+mouse_offset_x) + ((mouse_y+mouse_offset_y) * 16) + 1]==8 or table[chunk][(mouse_x+mouse_offset_x) + ((mouse_y+mouse_offset_y) * 16) + 1] ==9)then
+                    f:stops(sounds[4])
+                    f:plays(sounds[4])
+                else
+                    f:stops(sounds[2])
+                    f:plays(sounds[2])
+                end
             end
         end
     end
@@ -104,6 +116,12 @@ function cycle_items()
             if(collcheck(0,3)==false)then
                 jump=3
             end
+        end
+        if(key=="t")then
+            freakout=freakout+math.random(-4,4)
+            hp=hp-5
+            f:stops(sounds[5])
+            f:plays(sounds[5])
         end
     end
 end

@@ -19,6 +19,10 @@ function misc_updates()
             ui_position=ui_position+2
         end
     end
+
+    if(math.floor(math.random(0,500))==1)then
+        f:plays(music[1])
+    end
 end
 
 function getsolidity(blockid)
