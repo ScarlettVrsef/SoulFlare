@@ -2,13 +2,10 @@
 
 This game is still very early in development, it's only *barely* not a block painter.
 
-<img href="/Readmeassets/screenshot 1.png" alt="Game Screenshot 1"></img>
-
-<img href="/Readmeassets/screenshot 2.png" alt="Game Screenshot 2"></img>
-
-<img href="/Readmeassets/screenshot 3.png" alt="Game Screenshot 3"></img>
-
-<img href="/Readmeassets/screenshot 4.png" alt="Game Screenshot 4"></img>
+[Game Screenshot 1](/Readmeassets/screenshot%201.png "Game Screenshot 1")
+[Game Screenshot 2](/Readmeassets/screenshot%202.png "Game Screenshot 2")
+[Game Screenshot 3](/Readmeassets/screenshot%203.png "Game Screenshot 3")
+[Game Screenshot 4](/Readmeassets/screenshot%204.png "Game Screenshot 4")
 
 ## Controls
 
