@@ -71,8 +71,8 @@ function love.draw()
     f:rgb(255,math.cos(sine_var)*128+128,255)
     f:drawr(sprites[2],love.mouse.getX()/4,love.mouse.getY()/4,sine_var,4,4)
 
-    f:rect2(60,60,8,8)
-    f:draw(sprites[19],64-3.5,64-3.5)
+    --f:rect2(60,60,8,8)
+    f:draw(sprites[19],64-1,64-1)
 
 
 end

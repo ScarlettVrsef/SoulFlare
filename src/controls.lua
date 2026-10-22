@@ -196,6 +196,7 @@ function movement()
         if(fall<2 and jump<1)then
             fall=fall+0.25
         end
+        falltime=falltime+1
         if(collcheck(0,fall+2))then
             y=y+math.floor(fall)
         else
@@ -205,6 +206,10 @@ function movement()
         end
     else
         fall=0
+        if(falltime>60)then
+            dealdamage((falltime-60)/2)
+        end
+        falltime=0
     end
 
     if(collcheck(2,0))then

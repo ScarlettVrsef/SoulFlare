@@ -78,7 +78,11 @@ function render_ui()
         f:rect2(71,3,(hp/2),5)
         f:rgb(255*((hp/200)+0.5),255*((hp/200)+0.5),255*((hp/200)+0.5))
         f:drawall(sprites[27+fullhealth],121,5,(math.sin(sine_var/2)+(freakout*8))/16,4.5,4.5,0.75+((math.sin(sine_var)+freakout+4)/8),0.75+((math.sin(sine_var)+freakout+4)/8))
+        love.graphics.print(hp,470,8,0,1.5,1.5)
         f:rgb(255,255,255)
+
+        --f:print(xmomentum,0,0)
+
 
 --f:print(mouse_x.."\n"..mouse_y.."\n"..mouse_chunk,0,0)
     --f:print(current_chunk,0,0)

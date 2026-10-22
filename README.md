@@ -24,10 +24,6 @@ hold **WASD** to move
 
 hold **LEFT SHIFT** to run
 
-experiments:
-
-    press **t** to test damage, deals 5 hp of damage.
-
 ## To-do list
 
 * 1 - ~~make the world bigger than 16 blocks (and also change the name after that)~~ **DONE!!!!**

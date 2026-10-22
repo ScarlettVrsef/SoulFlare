@@ -1,7 +1,13 @@
 x=0
+xmomentum=0
+ymomentum=0
 y=-8
-jump = 0
-fall = 0
+jump=0
+falltime=0
+fall=0
+plr_x_dir=0
+plr_y_dir=0
+time_falling = 0
 player_width = 8
 player_height = 12
 spd=1
@@ -9,6 +15,7 @@ coll = false
 hp=100
 fullhealth=1
 freakout=0
+
 
 hotbar_size = 16
 selected_slot = 1
@@ -34,10 +41,18 @@ inventory = {
 mouse_offset_x = 0
 mouse_offset_y = 0
 
+function dealdamage(amount)
+    freakout=freakout+math.random(-amount,amount)
+    hp=hp-amount
+    f:stops(sounds[5])
+    f:plays(sounds[5])
+end
+
 function player_updates()
     cycle_items()
     movement()
     break_apart()
+
     freakout=freakout*0.9
     if(hp>92)then
         fullhealth=1
