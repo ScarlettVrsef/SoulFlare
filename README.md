@@ -1,4 +1,4 @@
-# SOULFLARE V0.3
+# SOULFLARE V0.3.1
 
 This game is still very early in development, it's only *barely* not a block painter.
 
